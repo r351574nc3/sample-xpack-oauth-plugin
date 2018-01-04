@@ -1,0 +1,17 @@
+grant {
+  permission java.lang.RuntimePermission "createClassLoader";
+  permission java.lang.RuntimePermission "getClassLoader";
+  permission java.lang.RuntimePermission "accessDeclaredMembers";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.reflect";
+  permission java.lang.RuntimePermission "accessClassInPackage.jdk.internal.reflect";
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.net.SocketPermission "*", "resolve,connect";
+  permission java.net.URLPermission "${kibana.userInfoUrl}", "POST:Accept-EncodingUser-Agent,GET";
+  
+  // Standard set of classes
+  permission org.elasticsearch.script.ClassPermission "<<STANDARD>>";
+  permission org.elasticsearch.script.ClassPermission "sun.reflect.ConstructorAccessorImpl";
+  permission org.elasticsearch.script.ClassPermission "sun.reflect.MethodAccessorImpl";
+  permission org.elasticsearch.script.ClassPermission "jdk.internal.reflect.ConstructorAccessorImpl";
+  permission org.elasticsearch.script.ClassPermission "jdk.internal.reflect.MethodAccessorImpl";
+};
